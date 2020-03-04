@@ -165,9 +165,9 @@ class CreditCard extends Component {
                                 </View>
                                 : null}
                             <View style={styles.info}>
-                                <View style={styles.number}><Text style={styles.textNumber}>{this.getValue("number")}</Text></View>
+                                <View style={styles.number}><Text style={[styles.textNumber, { color: props.textNumberColor }]}>{this.getValue("number")}</Text></View>
                                 <View style={styles.rowWrap}>
-                                    <View style={styles.name}><Text style={styles.textName}>{this.getValue("name")}</Text></View>
+                                    <View style={styles.name}><Text style={[styles.textName, { color: props.textNameColor }]}>{this.getValue("name")}</Text></View>
                                     {showExpiryAfterLabel &&
                                         <View style={styles.validthru}>
                                             <Text style={styles.textValidThru}>{expiryAfterText || 'VALID THRU'}</Text>
@@ -180,7 +180,7 @@ class CreditCard extends Component {
                                         {showExpiryBeforeLabel && 
                                             <Text style={styles.textSmall}>{expiryBeforeText || 'MONTH/YEAR'}</Text>
                                         }
-                                        <Text style={styles.textExpiry}>{this.getValue("expiry")}</Text>
+                                        <Text style={[styles.textExpiry, { color: props.textExpiryColor }]}>{this.getValue("expiry")}</Text>
                                     </View>
                                 </View>
                             </View>
